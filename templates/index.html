@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Expression Generator</title>
+</head>
+<body>
+    <h1>Logical Expression Generator</h1>
+    
+    <!-- Form tạo câu hỏi ngẫu nhiên -->
+    <form method="POST" action="/generate_question">
+        <button type="submit">Generate Random Question</button>
+    </form>
+
+    <hr>
+
+    <!-- Hiển thị biểu thức đã tạo và kết quả -->
+    {% if expr %}
+    <h2>Generated Expression:</h2>
+    <p><b>{{ expr }}</b> <=> <b>{{ ketqua }}</b></p>
+    {% endif %}
+
+<!-- Hiển thị các bước đơn giản hóa -->
+{% if steps %}
+<h2>Simplification Steps:</h2>
+<p>{{ steps|join(" <=> ") }}</p>
+{% endif %}
+
+
+
+
+</body>
+</html>
